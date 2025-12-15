@@ -1,25 +1,13 @@
-module.exports [
+import globals from "globals";
+
+export default [
   {
-    ignores: ["node_modules/**", "dist/**", "coverage/**"]
-  },
-  {
+    files: ["**/*.js"],
     languageOptions: {
-      globals: {
-        window: "readonly",
-        document: "readonly",
-        console: "readonly"
-      }
-    },
-    env: {
-      browser: true,
-      node: true,
-      es2021: true,
-      jest: true
+      globals: globals.browser
     },
     rules: {
-      "no-undef": "error",
-      "no-unused-vars": "warn",
-      semi: ["error", "always"]
+      "no-undef": "error"
     }
   }
 ];
